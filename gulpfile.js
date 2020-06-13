@@ -154,5 +154,3 @@ gulp.task( 'build', gulp.series('style', 'scripts', 'textdomain'));
 gulp.task( 'release', gulp.series('build', 'rtl', 'images'));
 
 gulp.task( 'deploy', gulp.series('clean:deploy', 'copy:deploy'));
-
-gulp.task( 'postdeploy', gulp.series('clean:deploy'));
