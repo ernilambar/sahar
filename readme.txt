@@ -20,15 +20,20 @@ Sahar is a minimal WordPress blog theme. Theme is developed with minimalistic de
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Copyright ==
+
+Sahar WordPress Theme, Copyright 2020 Nilambar Sharma
+Sahar is distributed under the terms of the GNU GPL
+
 == Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
+= Does this theme provide full width template? =
 
-Sahar includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Yes.
 
 == Changelog ==
 
-= 1.0.0 - Jun 07 2020 =
+= 1.0.0 - Jun 12 2020 =
 * Initial release
 
 == Credits ==
