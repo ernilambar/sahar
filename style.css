@@ -715,8 +715,11 @@ textarea {
   padding: 10px 15px;
   display: block;
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 30px; }
+  @media screen and (max-width: 1024px) {
+    .menu-toggle {
+      right: 20px; } }
   .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
     background-color: #33363b; }
   .menu-toggle:focus {

@@ -98,8 +98,12 @@
     padding: 10px 15px;
     display: block;
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 30px;
+
+    @media #{$tablet} {
+    	right: 20px;
+    }
 
     &:hover,
     &:active,
