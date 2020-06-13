@@ -55,7 +55,7 @@ if ( ! function_exists( 'sahar_setup' ) ) :
 			apply_filters(
 				'sahar_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
+					'default-color' => 'f0f3f5',
 					'default-image' => '',
 				)
 			)
