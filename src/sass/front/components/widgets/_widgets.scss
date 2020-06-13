@@ -1,0 +1,43 @@
+.widget-area {
+	.widget {
+		margin: 0 0 1.5em;
+		background-color: $color__background-section;
+		padding: 30px;
+		box-shadow: 0 0 26px #eaeaea9e;
+
+		select {
+			max-width: 100%;
+		}
+
+		ul,
+		ol {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+		  list-style: none;
+
+		  li {
+		  	margin-left: 15px;
+		  	margin-bottom: 5px;
+		  }
+
+		  li::before {
+		    content: "\2022";
+		    font-size: 14px;
+		    color: #666;
+		    display: inline-block;
+		    width: 1em;
+		    margin-left: -1em;
+		  }
+		}
+
+		.widget-title {
+			margin: 0;
+			font-size: 22px;
+			line-height: 22px;
+			margin-bottom: 15px;
+		}
+	}
+}

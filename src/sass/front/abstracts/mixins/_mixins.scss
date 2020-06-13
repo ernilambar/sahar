@@ -1,0 +1,81 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin fsz($size) {
+  font-size: calculateRem($size);
+}
+
+@mixin lh($size) {
+  line-height: calculateRem($size);
+}
+
+@function trem( $px_value ) {
+    @return ( $px_value / $base-font-size ) + rem;
+}
+
+// Mixins
+@mixin transform( $transforms ) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transform-origin( $origin ) {
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin transform-perspective( $perspective ) {
+    -moz-transform-perspective: $perspective;
+    -o-transform-perspective: $perspective;
+    -ms-transform-perspective: $perspective;
+    -webkit-transform-perspective: $perspective;
+    transform-perspective: $perspective;
+}
+
+@mixin transition( $transition-property, $transition-time, $method ) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin animation($name, $duration, $iteration_count, $timing_function, $fill-mode, $delay:0s) {
+    // The -webkit- animation value NEEDS the delay in it, the plain animation value will break with it.
+    // And Firefox needs units with the delay number, even if it's 0.
+    -webkit-animation: $name $duration $delay $iteration_count $timing_function $fill-mode;
+    animation: $name $duration $delay $iteration_count $timing_function $fill-mode;
+
+}
+
+@mixin anything($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+    #{$property}: #{$value};
+}

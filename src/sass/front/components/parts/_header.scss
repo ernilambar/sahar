@@ -1,0 +1,35 @@
+.site-header {
+	background-color: $color__background-section;
+	padding: 10px 30px;
+	margin-bottom: 30px;
+
+	& > .container {
+		display: grid;
+		align-items: center;
+		grid-template-columns: minmax(200px, 400px) 1fr;
+	}
+
+	.custom-logo-link {
+		max-width: 150px;
+		margin-right: 10px;
+	}
+
+	.site-branding {
+		display: flex;
+		align-items: center;
+
+		@media #{$tablet} {
+			margin-left: -30px;
+		}
+	}
+
+	.site-title {
+		font-size: 34px;
+		font-family: $font__secondary;
+		margin: 0;
+	}
+
+	.site-description {
+		margin-top: 0;
+	}
+}

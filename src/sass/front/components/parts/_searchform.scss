@@ -1,0 +1,40 @@
+.search-form {
+	& > div {
+		position: relative;
+		max-width: 300px;
+		width: 100%;
+	}
+
+	input[type="text"],
+	input[type="search"] {
+		padding-right: 30px;
+		border-radius: 0;
+	}
+
+	.search-field {
+		width: 100%;
+	}
+
+	.search-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 0 18px;
+		border: 0;
+		background: $color__background-button;
+		border-radius: 0;
+		transition: .3s;
+
+		&:hover,
+		&:focus {
+			background-color: $color__background-button-hover;
+		}
+
+		svg {
+			width: 15px;
+			height: 15px;
+			fill: $color__text-button;
+		}
+	}
+}

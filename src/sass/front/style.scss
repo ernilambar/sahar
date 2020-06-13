@@ -1,0 +1,64 @@
+/*!
+Theme Name: Sahar
+Author: Nilambar Sharma
+Author URI: https://www.nilambar.net/
+Description: Sahar is a minimal WordPress blog theme. Theme is developed with minimalistic design in the focus. If you want a simple and elegant blog for your site then this theme will be suitable for you. Theme is responsive and cross browser compatible. Theme provides full width page template with which you can use blocks in your site easily.
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6.20
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sahar
+Tags: blog, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, one-column, two-columns, right-sidebar, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Sahar is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+@import "global/global";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";

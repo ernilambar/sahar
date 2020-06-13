@@ -1,0 +1,315 @@
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+}
+
+.main-navigation ul li {
+    position: relative;
+}
+
+.main-navigation ul li a {
+    color: #000000;
+    display: block;
+    outline-offset: -1px;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
+.main-navigation ul ul {
+    display: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.no-js .main-navigation ul ul {
+    display: block;
+}
+
+.main-navigation ul .toggled-on {
+    display: block;
+}
+
+.main-navigation ul.primary-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.site-header-menu {
+    display: none;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+}
+
+.site-header-menu.toggled-on,
+.no-js .site-header-menu {
+    display: block;
+}
+
+.site-header-menu.toggled-on {
+	animation: fadeIn 1s;
+}
+
+.dropdown-toggle {
+	border: 1px red solid;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	line-height: 1;
+	font-size: 18px;
+	font-size: 1.125rem;
+	position: absolute;
+	right: 0;
+	text-transform: none;
+	top: 0;
+}
+
+.dropdown-toggle .icon {
+	border: 1px blue solid;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+	background-color: transparent;
+}
+
+.dropdown-toggle:focus {
+	outline: thin dotted !important;
+	border: 1px $color__text-input dotted;
+}
+
+.dropdown-toggle:focus:after {
+	border-color: transparent;
+}
+
+.dropdown-toggle.toggled-on .icon {
+	transform: rotate(-180deg);
+}
+
+.menu-toggle {
+    background-color: $color__background-button;
+    color: $color__text-button;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+
+    &:hover,
+    &:active,
+    &:focus {
+	    background-color: $color__background-button-hover;
+    }
+
+    &:focus {
+    	outline: thin dotted;
+    }
+}
+
+.menu-toggle .fas {
+    margin-right: 5px;
+    width: 15px;
+}
+
+.no-js .menu-toggle {
+    display: none;
+}
+
+.menu-toggle.toggled-on:focus {
+    outline: thin dotted;
+}
+
+#main-nav {
+    float: right;
+}
+
+/* More than standard 910px (devices and browsers) */
+@media screen and (min-width: 910px) {
+    .site-header-main {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .site-header-menu {
+        display: block;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+
+    .main-navigation ul,
+    .main-navigation ul > li {
+        border: 0;
+    }
+
+    .main-navigation ul > li {
+        float: none;
+        display: inline-block;
+    }
+
+    .main-navigation ul li a {
+        outline-offset: -8px;
+        padding: 14px 10px;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .main-navigation ul ul a {
+        padding: 10px 20px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .main-navigation ul ul {
+        display: block;
+        left: -999em;
+        margin: 0;
+        position: absolute;
+        z-index: 99999;
+        border-top: 1px solid #fff;
+        background: #fff;
+        box-shadow: 0 0 30px #7b6a6a4d;
+    }
+
+    .main-navigation ul ul ul {
+        top: -1px;
+        border:none;
+    }
+
+    .main-navigation ul ul ul:before,
+    .main-navigation ul ul ul:after {
+        border: 0;
+    }
+
+    .main-navigation ul ul li {
+        border-bottom-width: 0;
+    }
+
+    .main-navigation ul ul a {
+        white-space: normal;
+        width: 220px;
+    }
+
+    .main-navigation ul li a:hover,
+    .main-navigation ul li a:focus,
+    .main-navigation ul li a:active,
+    .main-navigation ul li.current-menu-item > a,
+    .main-navigation ul li.current-menu-ancestor > a,
+    .main-navigation ul li:hover > a,
+    .main-navigation ul li:hover > a,
+    .main-navigation ul li:hover > a {
+        color: #aa0000;
+    }
+
+    .main-navigation ul ul:before {
+        border-style: solid;
+        content: "";
+        position: absolute;
+    }
+
+    .main-navigation ul ul:before {
+        border-color: #ffffff transparent;
+        border-width: 0 10px 10px;
+        right: 9px;
+        top: -9px;
+    }
+
+    .main-navigation li:hover > ul,
+    .main-navigation li.focus > ul {
+        right: 22px;
+        left: auto;
+    }
+
+    .main-navigation ul ul li:hover > ul,
+    .main-navigation ul ul li.focus > ul {
+        right: 100%;
+        left: auto;
+    }
+
+    .main-navigation .menu-item-has-children > a {
+        margin: 0;
+        padding-right: 35px;
+    }
+
+    .main-navigation ul ul .menu-item-has-children > a {
+        padding-right: 30px;
+    }
+
+    .dropdown-toggle,
+    .main-navigation ul .dropdown-toggle.toggled-on,
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* More than standard 910px (devices and browsers) */
+@media screen and (max-width: 909px) {
+    .main-navigation ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .dropdown-toggle {
+    	padding-bottom: 27px;
+    }
+
+    .site-header-menu.toggled-on,
+    .no-js .site-header-menu {
+        display: block;
+        position: absolute;
+        background: #fff;
+        top: 68px;
+        right: 20px;
+        width: 350px;
+        box-shadow: 0 0 6px #ddd;
+        z-index: 999;
+    }
+
+    .main-navigation ul li a {
+        padding: 10px 20px;
+        border-bottom: 1px solid #f1f1f1;
+
+        .icon {
+        	position: absolute;
+        	top: 15px;
+        	right: 5px;
+        	width: 20px;
+        	height: 20px;
+        }
+    }
+
+    .main-navigation ul li a.item-open .icon {
+    	transform: rotate(180deg);
+    }
+
+    .main-navigation ul ul li li a {
+        padding-left: 40px;
+    }
+
+    .main-navigation ul ul li a {
+        padding-left: 30px;
+    }
+}
+
+// Over desktop.
+@media screen and (min-width: 1024px) {
+	.main-navigation .menu-item-has-children > a > .icon {
+		display: inline;
+		left: 3px;
+		position: relative;
+		top: 5px;
+		width: 20px;
+		height: 20px;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a > .icon {
+		margin-top: -7px;
+		left: auto;
+		position: absolute;
+		right: 9px;
+		top: 50%;
+		transform: rotate(90deg);
+	}
+}

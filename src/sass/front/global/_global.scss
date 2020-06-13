@@ -1,0 +1,51 @@
+.container {
+    max-width: $width__site;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+    clear: both;
+
+    @media #{$phone} {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+#content > .container {
+	display: grid;
+	grid-column-gap: 30px;
+	grid-template-columns: 70% 30%;
+
+	@media #{$tablet} {
+	    grid-template-columns: 1fr;
+	}
+}
+
+.page-template-full-width {
+	#content > .container {
+		grid-template-columns: 1fr;
+	}
+}
+
+.error404 {
+	#content > .container {
+		grid-template-columns: 1fr;
+	}
+
+	.page-content {
+		background-color: $color__background-section;
+		padding: 30px 30px;
+	}
+}
+
+.no-results {
+	.page-content {
+		background-color: $color__background-section;
+		padding: 30px 30px;
+	}
+}
+
+.required {
+	color: #dd0000;
+}

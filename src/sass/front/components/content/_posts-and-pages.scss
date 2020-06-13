@@ -1,0 +1,80 @@
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 2em;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.entry-content {
+	ul,
+	ol {
+	    padding: 0 0 0 1em;
+	    margin-bottom: 1em;
+	}
+}
+
+.wp-block-quote {
+	border-left-color: $color__text-main;
+}
+
+.entry-footer {
+	span {
+		margin-right: 10px;
+	}
+}
+
+.article-wrap {
+	background-color: $color__background-section;
+	padding: 5px 30px 30px 30px;
+	margin-bottom: 30px;
+
+	.entry-header {
+		margin-bottom: 15px;
+
+		.entry-title {
+			margin-bottom: 10px;
+		}
+	}
+
+	.entry-meta,
+	.entry-footer {
+		font-size: 14px;
+	}
+}
+
+.page-header {
+	background-color: $color__background-section;
+	padding: 20px 30px;
+	margin-bottom: 30px;
+
+	.page-title {
+		margin: 0;
+
+		span {
+			font-weight: 700;
+		}
+	}
+
+	.archive-description {
+		p {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+.site-footer {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 14px;
+
+	.site-copyright {
+		margin-bottom: 10px;
+	}
+}
+
+#scrollup {
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+	outline: none;
+	padding: 7px;
+	position: fixed;
+	bottom: -20px;
+	right: 20px;
+	text-decoration: none;
+	width: 42px;
+	height: 42px;
+	z-index: 9999;
+	transition: .3s;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+
+		.icon {
+			background-color: $color__background-button-hover;
+		}
+	}
+
+	.icon {
+		font-size: 12px;
+		width: 36px;
+		height: 36px;
+		background-color: $color__background-button;
+		fill: $color__text-button;
+		transform: rotate(180deg);
+	}
+
+	&.scroll-on {
+		bottom: 20px;
+		opacity: 1;
+	}
+}
