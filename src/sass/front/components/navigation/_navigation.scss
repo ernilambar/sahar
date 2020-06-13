@@ -102,7 +102,13 @@
     top: 30px;
 
     @media #{$tablet} {
+    	right: 30px;
+    	top: 30px;
+    }
+
+    @media #{$phone} {
     	right: 20px;
+    	top: 20px;
     }
 
     &:hover,

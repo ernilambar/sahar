@@ -8,18 +8,28 @@
 		align-items: center;
 	}
 
-	.custom-logo-link {
-		max-width: 150px;
-		margin-right: 10px;
-	}
-
 	.site-branding {
 		flex-basis: 35%;
 		display: flex;
 		align-items: center;
 
 		@media #{$tablet} {
+			flex-basis: inherit;
 			margin-left: -30px;
+		}
+
+		@media #{$phone} {
+			flex-direction: row;
+			margin-left: -30px;
+		}
+	}
+
+	.custom-logo-link {
+		max-width: 150px;
+		margin-right: 10px;
+
+		@media #{$phone} {
+			max-width: 50px;
 		}
 	}
 
@@ -31,5 +41,9 @@
 
 	.site-description {
 		margin-top: 0;
+
+		@media #{$tablet} {
+			display: none;
+		}
 	}
 }

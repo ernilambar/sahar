@@ -719,7 +719,12 @@ textarea {
   top: 30px; }
   @media screen and (max-width: 1024px) {
     .menu-toggle {
-      right: 20px; } }
+      right: 30px;
+      top: 30px; } }
+  @media screen and (max-width: 767px) {
+    .menu-toggle {
+      right: 20px;
+      top: 20px; } }
   .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
     background-color: #33363b; }
   .menu-toggle:focus {
@@ -1126,9 +1131,6 @@ nav.pagination {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .site-header .custom-logo-link {
-    max-width: 150px;
-    margin-right: 10px; }
   .site-header .site-branding {
     -ms-flex-preferred-size: 35%;
         flex-basis: 35%;
@@ -1140,13 +1142,31 @@ nav.pagination {
             align-items: center; }
     @media screen and (max-width: 1024px) {
       .site-header .site-branding {
+        -ms-flex-preferred-size: inherit;
+            flex-basis: inherit;
         margin-left: -30px; } }
+    @media screen and (max-width: 767px) {
+      .site-header .site-branding {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        margin-left: -30px; } }
+  .site-header .custom-logo-link {
+    max-width: 150px;
+    margin-right: 10px; }
+    @media screen and (max-width: 767px) {
+      .site-header .custom-logo-link {
+        max-width: 50px; } }
   .site-header .site-title {
     font-size: 34px;
     font-family: "Roboto Slab", serif;
     margin: 0; }
   .site-header .site-description {
     margin-top: 0; }
+    @media screen and (max-width: 1024px) {
+      .site-header .site-description {
+        display: none; } }
 
 .site-footer {
   margin-top: 40px;
