@@ -121,12 +121,16 @@ gulp.task('copy:deploy', function() {
 	const { zip } = gulpPlugins;
 	var sourceFiles = [
 		'**/*',
+		'!composer.json',
+		'!composer.lock',
 		'!gulpfile.js',
-		'!package.json',
-		'!style.css.map',
 		'!package-lock.json',
+		'!package.json',
+		'!phpcs.xml.dist',
+		'!style.css.map',
 		'!**/src/**',
 		'!**/node_modules/**',
+		'!**/vendor/**',
 		'!**/deploy/**'
 	];
 
