@@ -8,7 +8,7 @@
     "build": "gulp build",
     "release": "gulp release",
     "images": "gulp images",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy",
     "postdeploy": "gulp postdeploy"
   },
   "author": "Nilambar Sharma",
