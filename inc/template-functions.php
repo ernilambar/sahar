@@ -62,7 +62,7 @@ add_filter( 'sahar_filter_main_container_status', 'sahar_customize_main_containe
  */
 function sahar_add_go_to_top() {
 	?>
-	<a href="#masthead" id="scrollup" class="backtotop"><?php echo sahar_get_svg( array( 'icon' => 'angle-down' ) ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go to top', 'sahar' ); ?></span></a>
+	<a href="#masthead" id="scrollup" class="backtotop"><?php echo sahar_get_svg( array( 'icon' => 'angle-down' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span class="screen-reader-text"><?php esc_html_e( 'Go to top', 'sahar' ); ?></span></a>
 	<?php
 }
 

@@ -67,8 +67,8 @@ function sahar_fonts_url() {
 	if ( $fonts ) {
 		$fonts_url = add_query_arg(
 			array(
-				'family'  => urlencode( implode( '|', $fonts ) ),
-				'subset'  => urlencode( $subsets ),
+				'family'  => rawurlencode( implode( '|', $fonts ) ),
+				'subset'  => rawurlencode( $subsets ),
 				'display' => 'swap',
 			),
 			'https://fonts.googleapis.com/css'
