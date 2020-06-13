@@ -8,8 +8,7 @@
     "build": "gulp build",
     "release": "gulp release",
     "images": "gulp images",
-    "deploy": "gulp deploy",
-    "postdeploy": "gulp postdeploy"
+    "deploy": "gulp deploy"
   },
   "author": "Nilambar Sharma",
   "license": "MIT",

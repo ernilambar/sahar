@@ -720,7 +720,7 @@ textarea {
   @media screen and (max-width: 1024px) {
     .menu-toggle {
       right: 30px;
-      top: 30px; } }
+      top: 20px; } }
   @media screen and (max-width: 767px) {
     .menu-toggle {
       right: 20px;
