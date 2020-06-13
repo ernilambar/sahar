@@ -615,6 +615,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+.main-right-header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
 .main-navigation ul {
   list-style: none;
   margin: 0; }
@@ -1100,15 +1105,18 @@ nav.pagination {
   padding: 10px 30px;
   margin-bottom: 30px; }
   .site-header > .container {
-    display: grid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-    grid-template-columns: minmax(200px, 400px) 1fr; }
+            align-items: center; }
   .site-header .custom-logo-link {
     max-width: 150px;
     margin-right: 10px; }
   .site-header .site-branding {
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

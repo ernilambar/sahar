@@ -4,9 +4,8 @@
 	margin-bottom: 30px;
 
 	& > .container {
-		display: grid;
+		display: flex;
 		align-items: center;
-		grid-template-columns: minmax(200px, 400px) 1fr;
 	}
 
 	.custom-logo-link {
@@ -15,6 +14,7 @@
 	}
 
 	.site-branding {
+		flex-basis: 35%;
 		display: flex;
 		align-items: center;
 
