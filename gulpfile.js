@@ -12,8 +12,6 @@ var pkg = JSON.parse(fs.readFileSync('./package.json'));
 
 var browserSync = require('browser-sync').create();
 
-var del = require('del');
-
 // Error Handling.
 var onError = function( err ) {
     console.log( 'An error occurred:', err.message );
@@ -103,33 +101,6 @@ gulp.task( 'clearCache', function( done ) {
 	return cache.clearAll( done );
 });
 
-gulp.task('clean:deploy', function() {
-    return del('deploy');
-});
-
-gulp.task('copy:deploy', function() {
-	const { zip } = gulpPlugins;
-	var sourceFiles = [
-		'**/*',
-		'!composer.json',
-		'!composer.lock',
-		'!gulpfile.js',
-		'!package-lock.json',
-		'!package.json',
-		'!phpcs.xml.dist',
-		'!style.css.map',
-		'!**/src/**',
-		'!**/node_modules/**',
-		'!**/vendor/**',
-		'!**/deploy/**'
-	];
-
-	return gulp.src(sourceFiles)
-	    .pipe(gulp.dest('deploy/' + pkg.name))
-	    .pipe(zip(pkg.name + '.zip'))
-	    .pipe(gulp.dest('deploy'));
-});
-
 // Tasks.
 gulp.task( 'default', gulp.series('watch'));
 
@@ -140,5 +111,3 @@ gulp.task( 'images', gulp.series('clearCache', 'imagesmin'));
 gulp.task( 'build', gulp.series('style', 'scripts'));
 
 gulp.task( 'release', gulp.series('build', 'rtl', 'images'));
-
-gulp.task( 'deploy', gulp.series('clean:deploy', 'copy:deploy'));
