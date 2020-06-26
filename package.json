@@ -5,9 +5,12 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build",
+    "build": "yarn run build:pot",
+    "build:pot": "yarn run textdomain && yarn run language",
     "release": "gulp release",
     "images": "gulp images",
+    "textdomain": "wpi18n addtextdomain --textdomain=sahar",
+    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy --textdomain=sahar",
     "deploy": "gulp deploy"
   },
   "author": "Nilambar Sharma",
@@ -25,12 +28,10 @@
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-rtlcss": "^1.4.1",
-    "gulp-run": "^1.7.1",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.1",
     "jshint": "^2.11.1",
     "node-wp-i18n": "^1.2.3"
   }
