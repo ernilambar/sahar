@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "yarn run build:pot && yarn run build:images",
+    "build": "yarn run build:scss && yarn run build:pot && yarn run build:images",
     "build:pot": "yarn run textdomain && yarn run language",
     "clean": "del 'deploy/'",
     "deploy": "yarn run clean && yarn run deploy:files && yarn run deploy:dirs",
