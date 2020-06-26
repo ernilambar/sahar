@@ -19,11 +19,16 @@
     "build:images": "imagemin src/images/*.* --out-dir=assets/images/",
     "textdomain": "wpi18n addtextdomain --textdomain=sahar",
     "rtl": "rtlcss style.css style-rtl.css",
+    "build:js": "yarn run js",
+    "js": "babel src/scripts/*.js --out-dir assets/js",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy --textdomain=sahar"
   },
   "author": "Nilambar Sharma",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "autoprefixer": "^9.8.4",
     "browser-sync": "^2.26.7",
     "concurrently": "^5.2.0",
