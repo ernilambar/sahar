@@ -12,6 +12,9 @@
     "deploy:dirs": "cpy --parents 'assets/**' 'inc/**' 'languages/**' 'template-parts/**' 'templates/**' 'deploy/sahar' ",
     "deploy:files": "cpy '*.css' '*.php' 'readme.txt' 'screenshot.png'  'deploy/sahar' ",
     "release": "gulp release",
+    "build:scss": "yarn run scss && yarn run optimizecss",
+    "scss": "node-sass src/sass/front/style.scss -o '.' | postcss style.css -c postcss.config.js -o style.css --use autoprefixer --map file",
+    "optimizecss": "postcss assets/css/style.css -c postcss.config.js -o assets/css/style.css --use autoprefixer --no-map",
     "images": "gulp images",
     "textdomain": "wpi18n addtextdomain --textdomain=sahar",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy --textdomain=sahar"
@@ -20,6 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "concurrently": "^5.2.0",
     "cpy-cli": "^3.1.1",
     "del-cli": "^3.0.1",
     "gulp": "^4.0.2",
@@ -37,6 +41,12 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "jshint": "^2.11.1",
-    "node-wp-i18n": "^1.2.3"
-  }
+    "node-sass": "^4.14.1",
+    "node-wp-i18n": "^1.2.3",
+    "onchange": "^7.0.2",
+    "postcss-cli": "^7.1.1"
+  },
+  "browserslist": [
+    "last 4 versions"
+  ]
 }
