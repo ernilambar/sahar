@@ -19,10 +19,10 @@
     "release": "yarn run deploy",
     "rtl": "rtlcss style.css style-rtl.css",
     "scss": "node-sass src/sass/front/style.scss -o '.' --source-map-root file://${PWD}/ --source-map-embed true",
-    "serve": "browser-sync start --proxy 'http://staging.local/' --files \"assets/css/*.css, assets/js/*.js, **/*.php, !node_modules/**/*.html\" ",
+    "serve": "browser-sync start --proxy 'http://staging.local/' --files \"assets/css/*.css, assets/js/*.js, style.css, **/*.php, !node_modules/**/*.html\" --no-open --no-ui --no-inject-changes",
     "start" : "concurrently --kill-others \"yarn run serve\" \"yarn run watch\"",
     "textdomain": "wpi18n addtextdomain --textdomain=sahar",
-    "watch": "concurrently --kill-others \"yarn run watch:scss\" \"yarn run watch:js\"",
+    "watch": "concurrently \"yarn run watch:scss\" \"yarn run watch:js\"",
     "watch:js": "onchange 'src/scripts/**/*.js' -- yarn run build:js",
     "watch:scss": "onchange 'src/sass/**/*.scss' -- yarn run build:scss"
   },
