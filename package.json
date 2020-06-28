@@ -36,7 +36,6 @@
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.5.1",
-    "browserify-shim": "^3.8.14",
     "concurrently": "^5.2.0",
     "cpy-cli": "^3.1.1",
     "del-cli": "^3.0.1",
@@ -67,6 +66,11 @@
   "browserslist": [
     "last 4 versions"
   ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "rtlcssConfig": {
     "options": {
       "autoRename": false,

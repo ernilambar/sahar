@@ -44,6 +44,7 @@ var imgURL = './assets/images/';
 var styleWatch = './src/sass/**/*.scss';
 var jsWatch    = './src/scripts/**/*.js';
 var imgWatch   = './src/images/**/*.*';
+var phpWatch   = './**/**/*.php';
 
 gulp.task('scss', function () {
     return gulp.src( styleSRC )
@@ -63,13 +64,13 @@ gulp.task( 'watch', function() {
     });
 
     // Watch SCSS files.
-    gulp.watch( rootPath + 'src/sass/front/**/*.scss', gulp.series( 'scss' ) ).on('change',browserSync.reload);
+    gulp.watch( styleWatch, gulp.series( 'scss' ) ).on('change',browserSync.reload);
 
     // Watch PHP files.
-    gulp.watch( rootPath + '**/**/*.php' ).on('change',browserSync.reload);
+    gulp.watch( phpWatch ).on('change',browserSync.reload);
 
     // Watch JS files.
-    gulp.watch( rootPath + 'src/scripts/*.js').on('change',browserSync.reload);
+    gulp.watch( jsWatch ).on('change',browserSync.reload);
 });
 
 // Tasks.
