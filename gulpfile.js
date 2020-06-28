@@ -135,6 +135,6 @@ gulp.task( 'default', gulp.series( 'watch' ) );
 
 gulp.task( 'style', gulp.series( 'scss' ) );
 
-gulp.task( 'build', gulp.series( 'style', 'scripts', 'images' ) );
+gulp.task( 'build', gulp.series( 'style', 'scripts' ) );
 
 gulp.task( 'deploy', gulp.series( 'clean:deploy', 'copy:deploy' ) );
