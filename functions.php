@@ -146,7 +146,7 @@ function sahar_scripts() {
 		)
 	);
 
-	wp_enqueue_script( 'sahar-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), SAHAR_VERSION, true );
+	wp_enqueue_script( 'sahar-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), SAHAR_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
