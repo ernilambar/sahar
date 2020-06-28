@@ -80,7 +80,7 @@ gulp.task('scss', () => {
 });
 
 gulp.task('scripts', ( done ) => {
-	jsFiles.map( function(entry) {
+	jsFiles.map( (entry) => {
 		return browserify({
 			entries: [jsSRC + entry]
 		})
@@ -114,20 +114,20 @@ gulp.task( 'copy:deploy', () => {
 	    .pipe( gulp.dest( 'deploy' ) );
 });
 
-gulp.task( 'watch', function() {
+gulp.task( 'watch', () => {
     browserSync.init({
         proxy: projectURL,
         open: false
     });
 
     // Watch SCSS files.
-    gulp.watch( styleWatch, gulp.series( 'scss' ) ).on('change',browserSync.reload);
+    gulp.watch( styleWatch, gulp.series( 'scss' ) ).on( 'change', browserSync.reload );
 
     // Watch PHP files.
-    gulp.watch( phpWatch ).on('change',browserSync.reload);
+    gulp.watch( phpWatch ).on( 'change', browserSync.reload );
 
     // Watch JS files.
-    gulp.watch( jsWatch, gulp.series( 'scripts' ) ).on('change',browserSync.reload);
+    gulp.watch( jsWatch, gulp.series( 'scripts' ) ).on( 'change', browserSync.reload );
 });
 
 // Tasks.
