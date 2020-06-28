@@ -4,6 +4,8 @@
 
 	$( document ).ready( function( $ ) {
 
+		let test = 'test';
+
 		// Implement go to top.
 		if ( $( '#scrollup' ).length > 0 ) {
 			$(window).scroll( function () {

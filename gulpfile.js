@@ -13,6 +13,7 @@ var source       = require( 'vinyl-source-stream' );
 var buffer       = require( 'vinyl-buffer' );
 
 // Utility plugins.
+var lec        = require( 'gulp-line-ending-corrector' );
 var rename     = require( 'gulp-rename' );
 var plumber    = require( 'gulp-plumber' );
 var sourcemaps = require( 'gulp-sourcemaps' );
@@ -55,6 +56,21 @@ gulp.task('scss', function () {
         .pipe( autoprefixer( 'last 4 version' ) )
         .pipe( sourcemaps.write( styleURL ) )
         .pipe( gulp.dest( styleURL ) );
+});
+
+gulp.task('scripts', function(done) {
+	jsFiles.map( function(entry) {
+		return browserify({
+			entries: [jsSRC + entry]
+		})
+		.transform( babelify, { presets: [ '@babel/preset-env' ] } )
+		.bundle()
+		.pipe( source( entry ) )
+		.pipe( buffer() )
+		.pipe( lec() )
+		.pipe( gulp.dest( jsURL ) );
+	});
+	done();
 });
 
 gulp.task( 'watch', function() {
