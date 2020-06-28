@@ -68,7 +68,10 @@ gulp.task('scripts', function(done) {
 		.pipe( source( entry ) )
 		.pipe( buffer() )
 		.pipe( lec() )
-		.pipe( gulp.dest( jsURL ) );
+		.pipe( gulp.dest( jsURL ) )
+		.pipe( uglify() )
+		.pipe( rename( {suffix: '.min'} ) )
+		.pipe( gulp.dest( jsURL ) )
 	});
 	done();
 });
@@ -94,4 +97,4 @@ gulp.task( 'default', gulp.series('watch'));
 
 gulp.task( 'style', gulp.series('scss'));
 
-gulp.task( 'build', gulp.series('style'));
+gulp.task( 'build', gulp.series('style', 'scripts'));
