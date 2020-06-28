@@ -68,7 +68,7 @@ const deployFiles = [
 	'templates/**'
 ];
 
-gulp.task('scss', function () {
+gulp.task('scss', () => {
     return gulp.src( styleSRC )
         .on( 'error', sass.logError )
         .pipe( plumber() )
@@ -79,7 +79,7 @@ gulp.task('scss', function () {
         .pipe( gulp.dest( styleURL ) );
 });
 
-gulp.task('scripts', function(done) {
+gulp.task('scripts', ( done ) => {
 	jsFiles.map( function(entry) {
 		return browserify({
 			entries: [jsSRC + entry]
@@ -97,17 +97,17 @@ gulp.task('scripts', function(done) {
 	done();
 });
 
-gulp.task( 'images', function() {
+gulp.task( 'images', () => {
     return gulp.src( imgSRC )
     	.pipe( plumber() )
     	.pipe( gulp.dest( imgURL ) );
 });
 
-gulp.task( 'clean:deploy', function() {
+gulp.task( 'clean:deploy', () => {
     return del( 'deploy' );
 });
 
-gulp.task( 'copy:deploy', function() {
+gulp.task( 'copy:deploy', () => {
 	return gulp.src( deployFiles, { base: "." } )
 	    .pipe( gulp.dest( 'deploy/' + projectName ) )
 	    .pipe( zip( projectName + '.zip' ) )
