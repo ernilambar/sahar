@@ -74,7 +74,7 @@ gulp.task('scss', function () {
         .pipe( plumber() )
         .pipe( sourcemaps.init() )
         .pipe( sass() )
-        .pipe( autoprefixer( 'last 4 version' ) )
+        .pipe( autoprefixer() )
         .pipe( sourcemaps.write( styleURL ) )
         .pipe( gulp.dest( styleURL ) );
 });
@@ -91,7 +91,7 @@ gulp.task('scripts', function(done) {
 		.pipe( lec() )
 		.pipe( gulp.dest( jsURL ) )
 		.pipe( uglify() )
-		.pipe( rename( {suffix: '.min'} ) )
+		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( jsURL ) )
 	});
 	done();

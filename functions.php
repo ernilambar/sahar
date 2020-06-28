@@ -14,6 +14,7 @@ if ( ! function_exists( 'sahar_setup' ) ) :
 	 * Theme setup.
 	 *
 	 * @since 1.0.0
+	 * @since 1.0.0
 	 */
 	function sahar_setup() {
 		// Make theme available for translation.
