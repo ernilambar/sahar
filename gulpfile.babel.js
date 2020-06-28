@@ -1,62 +1,62 @@
 // Load Gulp.
-var gulp = require( 'gulp' );
+const gulp = require( 'gulp' );
 
 // CSS related plugins.
-var sass         = require( 'gulp-sass' );
-var autoprefixer = require( 'gulp-autoprefixer' );
+const sass         = require( 'gulp-sass' );
+const autoprefixer = require( 'gulp-autoprefixer' );
 
 // JS related plugins.
-var uglify       = require( 'gulp-uglify' );
-var babelify     = require( 'babelify' );
-var browserify   = require( 'browserify' );
-var source       = require( 'vinyl-source-stream' );
-var buffer       = require( 'vinyl-buffer' );
+const uglify       = require( 'gulp-uglify' );
+const babelify     = require( 'babelify' );
+const browserify   = require( 'browserify' );
+const source       = require( 'vinyl-source-stream' );
+const buffer       = require( 'vinyl-buffer' );
 
 // Utility plugins.
-var fs         = require( 'fs' );
-var del        = require( 'del' );
-var lec        = require( 'gulp-line-ending-corrector' );
-var plumber    = require( 'gulp-plumber' );
-var rename     = require( 'gulp-rename' );
-var sourcemaps = require( 'gulp-sourcemaps' );
-var zip        = require( 'gulp-zip' );
+const fs         = require( 'fs' );
+const del        = require( 'del' );
+const lec        = require( 'gulp-line-ending-corrector' );
+const plumber    = require( 'gulp-plumber' );
+const rename     = require( 'gulp-rename' );
+const sourcemaps = require( 'gulp-sourcemaps' );
+const zip        = require( 'gulp-zip' );
 
 // Browsers related plugins.
-var browserSync = require( 'browser-sync' ).create();
+const browserSync = require( 'browser-sync' ).create();
 
 // Fetch package information.
-var packageJSON = JSON.parse(fs.readFileSync('./package.json'));
-var projectName = packageJSON.name;
-var projectVersion = packageJSON.version;
+const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+const projectName = packageJSON.name;
+const projectVersion = packageJSON.version;
 
 // Project URL.
-var projectURL = 'http://staging.local/';
+const projectURL = 'http://staging.local/';
 
 // Style related variables.
-var styleSRC = './src/sass/front/style.scss';
-var styleURL = './';
-var mapURL   = './';
+const styleSRC = './src/sass/front/style.scss';
+const styleURL = './';
+const mapURL   = './';
 
 // JS related variables.
-var jsSRC        = './src/scripts/';
-var jsFront      = 'custom.js';
-var jsCustomizer = 'customizer.js';
-var jsNavigation = 'navigation.js';
-var jsFiles      = [ jsFront, jsCustomizer, jsNavigation ];
-var jsURL        = './assets/js/';
+const jsSRC        = './src/scripts/';
+const jsFront      = 'custom.js';
+const jsCustomizer = 'customizer.js';
+const jsNavigation = 'navigation.js';
+const jsFiles      = [ jsFront, jsCustomizer, jsNavigation ];
+const jsURL        = './assets/js/';
 
 // Image related variables.
-var imgSRC = './src/images/**/*';
-var imgURL = './assets/images/';
+const imgSRC = './src/images/**/*';
+const imgURL = './assets/images/';
 
 // Watch related variables.
-var styleWatch = './src/sass/**/*.scss';
-var jsWatch    = './src/scripts/**/*.js';
-var imgWatch   = './src/images/**/*.*';
-var phpWatch   = './**/**/*.php';
+const styleWatch = './src/sass/**/*.scss';
+const jsWatch    = './src/scripts/**/*.js';
+const imgWatch   = './src/images/**/*.*';
+const phpWatch   = './**/**/*.php';
 
 // Deploy files.
-var deployFiles = [
+const deployFiles = [
 	'*.css',
 	'*.php',
 	'screenshot.png',
