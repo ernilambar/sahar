@@ -89,7 +89,7 @@ gulp.task( 'watch', function() {
     gulp.watch( phpWatch ).on('change',browserSync.reload);
 
     // Watch JS files.
-    gulp.watch( jsWatch ).on('change',browserSync.reload);
+    gulp.watch( jsWatch, gulp.series( 'scripts' ) ).on('change',browserSync.reload);
 });
 
 // Tasks.
