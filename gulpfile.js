@@ -13,13 +13,21 @@ var source       = require( 'vinyl-source-stream' );
 var buffer       = require( 'vinyl-buffer' );
 
 // Utility plugins.
+var fs         = require( 'fs' );
+var del        = require( 'del' );
 var lec        = require( 'gulp-line-ending-corrector' );
-var rename     = require( 'gulp-rename' );
 var plumber    = require( 'gulp-plumber' );
+var rename     = require( 'gulp-rename' );
 var sourcemaps = require( 'gulp-sourcemaps' );
+var zip        = require( 'gulp-zip' );
 
 // Browsers related plugins.
 var browserSync = require( 'browser-sync' ).create();
+
+// Fetch package information.
+var packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+var projectName = packageJSON.name;
+var projectVersion = packageJSON.version;
 
 // Project URL.
 var projectURL = 'http://staging.local/';
@@ -46,6 +54,19 @@ var styleWatch = './src/sass/**/*.scss';
 var jsWatch    = './src/scripts/**/*.js';
 var imgWatch   = './src/images/**/*.*';
 var phpWatch   = './**/**/*.php';
+
+// Deploy files.
+var deployFiles = [
+	'*.css',
+	'*.php',
+	'screenshot.png',
+	'readme.txt',
+	'assets/**',
+	'inc/**',
+	'languages/**',
+	'template-parts/**',
+	'templates/**'
+];
 
 gulp.task('scss', function () {
     return gulp.src( styleSRC )
@@ -76,6 +97,23 @@ gulp.task('scripts', function(done) {
 	done();
 });
 
+gulp.task( 'images', function() {
+    return gulp.src( imgSRC )
+    	.pipe( plumber() )
+    	.pipe( gulp.dest( imgURL ) );
+});
+
+gulp.task( 'clean:deploy', function() {
+    return del( 'deploy' );
+});
+
+gulp.task( 'copy:deploy', function() {
+	return gulp.src( deployFiles, { base: "." } )
+	    .pipe( gulp.dest( 'deploy/' + projectName ) )
+	    .pipe( zip( projectName + '.zip' ) )
+	    .pipe( gulp.dest( 'deploy' ) );
+});
+
 gulp.task( 'watch', function() {
     browserSync.init({
         proxy: projectURL,
@@ -93,8 +131,10 @@ gulp.task( 'watch', function() {
 });
 
 // Tasks.
-gulp.task( 'default', gulp.series('watch'));
+gulp.task( 'default', gulp.series( 'watch' ) );
 
-gulp.task( 'style', gulp.series('scss'));
+gulp.task( 'style', gulp.series( 'scss' ) );
 
-gulp.task( 'build', gulp.series('style', 'scripts'));
+gulp.task( 'build', gulp.series( 'style', 'scripts', 'images' ) );
+
+gulp.task( 'deploy', gulp.series( 'clean:deploy', 'copy:deploy' ) );
