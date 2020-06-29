@@ -1,12 +1,20 @@
 'use strict';
 
+const debouncer = (callback, wait) => {
+  let timeout = null
+  return (...args) => {
+    const next = () => callback(...args)
+    clearTimeout(timeout)
+    timeout = setTimeout(next, wait)
+  }
+}
+
 document.addEventListener("DOMContentLoaded",function(){
 	const scrollUp = document.getElementById('scrollup');
 
 	if ( scrollUp ) {
 
-		window.addEventListener('scroll', () => {
-
+		let scrollHandler = debouncer(function() {
 			var scrollPosition = window.pageYOffset | document.body.scrollTop;
 
 			if ( scrollPosition > 300) {
@@ -14,7 +22,9 @@ document.addEventListener("DOMContentLoaded",function(){
 			} else {
 				scrollUp.classList.remove('scroll-on');
 			}
-		});
+		}, 250);
+
+		window.addEventListener('scroll', scrollHandler);
 
 		scrollUp.addEventListener('click', (e) => {
 			e.preventDefault();

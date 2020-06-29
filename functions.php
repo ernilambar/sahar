@@ -135,7 +135,7 @@ function sahar_scripts() {
 	wp_enqueue_style( 'sahar-style', get_stylesheet_uri(), array(), SAHAR_VERSION );
 	wp_style_add_data( 'sahar-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'sahar-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), SAHAR_VERSION, true );
+	wp_enqueue_script( 'sahar-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), SAHAR_VERSION, true );
 
 	wp_localize_script(
 		'sahar-navigation',

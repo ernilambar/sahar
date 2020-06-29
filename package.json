@@ -52,5 +52,8 @@
     },
     "plugins": [],
     "map": false
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0"
   }
 }
