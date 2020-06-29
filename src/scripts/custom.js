@@ -1,13 +1,7 @@
 'use strict';
 
-const debouncer = (callback, wait) => {
-  let timeout = null
-  return (...args) => {
-    const next = () => callback(...args)
-    clearTimeout(timeout)
-    timeout = setTimeout(next, wait)
-  }
-}
+// Debounce helper.
+const debouncer = ( a, b = 250, c ) => (...d ) => clearTimeout( c, c=setTimeout( a, b, ...d ) )
 
 document.addEventListener("DOMContentLoaded",function(){
 	const scrollUp = document.getElementById('scrollup');
