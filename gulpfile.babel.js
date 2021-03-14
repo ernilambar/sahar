@@ -2,7 +2,7 @@
 const gulp = require( 'gulp' );
 
 // CSS related plugins.
-const sass         = require( 'gulp-sass' );
+const sass         = require( 'gulp-dart-sass' );
 const autoprefixer = require( 'gulp-autoprefixer' );
 
 // JS related plugins.
