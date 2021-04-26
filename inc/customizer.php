@@ -59,7 +59,7 @@ function sahar_customize_partial_blogdescription() {
  * @since 1.0.0
  */
 function sahar_customize_preview_js() {
-	wp_enqueue_script( 'sahar-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), SAHAR_VERSION, true );
+	wp_enqueue_script( 'sahar-customizer', get_template_directory_uri() . '/dist/customizer-bundle.js', array( 'customize-preview' ), SAHAR_VERSION, true );
 }
 
 add_action( 'customize_preview_init', 'sahar_customize_preview_js' );
