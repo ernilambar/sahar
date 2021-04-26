@@ -1,26 +1,4 @@
 @charset "UTF-8";
-/*!
-Theme Name: Sahar
-Author: Nilambar Sharma
-Author URI: https://www.nilambar.net/
-Description: Sahar is a minimal WordPress blog theme. Theme is developed with minimalistic design in the focus. If you want a simple and elegant blog for your site then this theme will be suitable for you. Theme is responsive and cross browser compatible. Theme provides full width page template with which you can use blocks in your site easily.
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6.20
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: sahar
-Tags: blog, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, one-column, two-columns, right-sidebar, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Sahar is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -492,7 +470,7 @@ hr {
 
 ul,
 ol {
-  margin: 0 1.5em 1em 0;
+  margin: 0 0 1em 1.5em;
 }
 
 ul {
@@ -506,7 +484,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-right: 1.5em;
+  margin-left: 1.5em;
 }
 
 dt {
@@ -548,7 +526,6 @@ a {
   color: #9c2a00;
   text-decoration: none;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 a:visited {
@@ -581,7 +558,6 @@ input[type=submit] {
   font-size: 15px;
   padding: 0.8em 1em;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 button:hover,
@@ -658,15 +634,15 @@ textarea {
 .container {
   max-width: 1200px;
   width: 100%;
-  padding-right: 30px;
   padding-left: 30px;
+  padding-right: 30px;
   margin: 0 auto;
   clear: both;
 }
 @media screen and (max-width: 767px) {
   .container {
-    padding-right: 20px;
     padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -686,13 +662,13 @@ textarea {
           flex: 1;
 }
 #content > .container #secondary {
-  margin-right: 30px;
+  margin-left: 30px;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
 }
 @media screen and (max-width: 1024px) {
   #content > .container #secondary {
-    margin-right: 0;
+    margin-left: 0;
     margin-top: 30px;
   }
 }
@@ -748,7 +724,7 @@ textarea {
 
 .main-navigation ul ul {
   display: none;
-  text-align: right;
+  text-align: left;
   margin: 0;
   padding: 0;
 }
@@ -792,7 +768,7 @@ textarea {
   font-size: 18px;
   font-size: 1.125rem;
   position: absolute;
-  left: 0;
+  right: 0;
   text-transform: none;
   top: 0;
 }
@@ -816,9 +792,8 @@ textarea {
 }
 
 .dropdown-toggle.toggled-on .icon {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 .menu-toggle {
@@ -828,18 +803,18 @@ textarea {
   padding: 10px 15px;
   display: block;
   position: absolute;
-  left: 30px;
+  right: 30px;
   top: 30px;
 }
 @media screen and (max-width: 1024px) {
   .menu-toggle {
-    left: 30px;
+    right: 30px;
     top: 20px;
   }
 }
 @media screen and (max-width: 767px) {
   .menu-toggle {
-    left: 20px;
+    right: 20px;
     top: 20px;
   }
 }
@@ -851,7 +826,7 @@ textarea {
 }
 
 .menu-toggle .fas {
-  margin-left: 5px;
+  margin-right: 5px;
   width: 15px;
 }
 
@@ -864,7 +839,7 @@ textarea {
 }
 
 #main-nav {
-  float: left;
+  float: right;
 }
 
 /* More than standard 910px (devices and browsers) */
@@ -906,7 +881,7 @@ textarea {
 
   .main-navigation ul ul {
     display: block;
-    right: -999em;
+    left: -999em;
     margin: 0;
     position: absolute;
     z-index: 99999;
@@ -955,29 +930,29 @@ textarea {
   .main-navigation ul ul:before {
     border-color: #ffffff transparent;
     border-width: 0 10px 10px;
-    left: 9px;
+    right: 9px;
     top: -9px;
   }
 
   .main-navigation li:hover > ul,
 .main-navigation li.focus > ul {
-    left: 22px;
-    right: auto;
+    right: 22px;
+    left: auto;
   }
 
   .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-    left: 100%;
-    right: auto;
+    right: 100%;
+    left: auto;
   }
 
   .main-navigation .menu-item-has-children > a {
     margin: 0;
-    padding-left: 35px;
+    padding-right: 35px;
   }
 
   .main-navigation ul ul .menu-item-has-children > a {
-    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .dropdown-toggle,
@@ -1003,7 +978,7 @@ textarea {
     position: absolute;
     background: #fff;
     top: 68px;
-    left: 20px;
+    right: 20px;
     width: 350px;
     -webkit-box-shadow: 0 0 6px #ddd;
             box-shadow: 0 0 6px #ddd;
@@ -1017,29 +992,28 @@ textarea {
   .main-navigation ul li a .icon {
     position: absolute;
     top: 15px;
-    left: 5px;
+    right: 5px;
     width: 20px;
     height: 20px;
   }
 
   .main-navigation ul li a.item-open .icon {
-    -webkit-transform: rotate(-180deg);
-        -ms-transform: rotate(-180deg);
-            transform: rotate(-180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
 
   .main-navigation ul ul li li a {
-    padding-right: 40px;
+    padding-left: 40px;
   }
 
   .main-navigation ul ul li a {
-    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 @media screen and (min-width: 1024px) {
   .main-navigation .menu-item-has-children > a > .icon {
     display: inline;
-    right: 3px;
+    left: 3px;
     position: relative;
     top: 5px;
     width: 20px;
@@ -1048,13 +1022,12 @@ textarea {
 
   .main-navigation ul ul .menu-item-has-children > a > .icon {
     margin-top: -7px;
-    right: auto;
+    left: auto;
     position: absolute;
-    left: 9px;
+    right: 9px;
     top: 50%;
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 .post-navigation {
@@ -1071,11 +1044,11 @@ textarea {
           justify-content: space-between;
 }
 .post-navigation .nav-links .nav-previous .nav-title-icon-wrapper {
-  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 3px;
 }
 .post-navigation .nav-links .nav-next .nav-title-icon-wrapper {
-  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 3px;
 }
 .post-navigation .nav-links .nav-title {
@@ -1103,11 +1076,11 @@ textarea {
           justify-content: space-between;
 }
 .posts-navigation .nav-links .nav-previous .meta-nav {
-  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 3px;
 }
 .posts-navigation .nav-links .nav-next .meta-nav {
-  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 3px;
 }
 .posts-navigation .nav-links a {
@@ -1127,7 +1100,7 @@ nav.pagination {
   clear: both;
 }
 nav.pagination .nav-links .page-numbers {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .footer-menu-wrapper {
@@ -1142,7 +1115,7 @@ nav.pagination .nav-links .page-numbers {
   padding: 0;
 }
 .footer-menu-wrapper ul li {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* Posts and pages
@@ -1173,16 +1146,16 @@ nav.pagination .nav-links .page-numbers {
 
 .entry-content ul,
 .entry-content ol {
-  padding: 0 1em 0 0;
+  padding: 0 0 0 1em;
   margin-bottom: 1em;
 }
 
 .wp-block-quote {
-  border-right-color: #444;
+  border-left-color: #444;
 }
 
 .entry-footer span {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .article-wrap {
@@ -1253,7 +1226,7 @@ nav.pagination .nav-links .page-numbers {
   list-style: none;
 }
 .widget-area .widget ul li {
-  margin-right: 15px;
+  margin-left: 15px;
   margin-bottom: 5px;
 }
 .widget-area .widget ul li::before {
@@ -1262,7 +1235,7 @@ nav.pagination .nav-links .page-numbers {
   color: #666;
   display: inline-block;
   width: 1em;
-  margin-right: -1em;
+  margin-left: -1em;
 }
 .widget-area .widget .widget-title {
   margin: 0;
@@ -1295,8 +1268,8 @@ nav.pagination .nav-links .page-numbers {
 }
 .wp-caption img[class*=wp-image-] {
   display: block;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
 }
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0;
@@ -1385,7 +1358,7 @@ nav.pagination .nav-links .page-numbers {
   .site-header .site-branding {
     -ms-flex-preferred-size: inherit;
         flex-basis: inherit;
-    margin-right: -30px;
+    margin-left: -30px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1394,12 +1367,12 @@ nav.pagination .nav-links .page-numbers {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin-right: -30px;
+    margin-left: -30px;
   }
 }
 .site-header .custom-logo-link {
   max-width: 150px;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 @media screen and (max-width: 767px) {
   .site-header .custom-logo-link {
@@ -1437,13 +1410,12 @@ nav.pagination .nav-links .page-numbers {
   padding: 7px;
   position: fixed;
   bottom: -20px;
-  left: 20px;
+  right: 20px;
   text-decoration: none;
   width: 42px;
   height: 42px;
   z-index: 9999;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 #scrollup:hover, #scrollup:focus {
@@ -1458,9 +1430,8 @@ nav.pagination .nav-links .page-numbers {
   height: 36px;
   background-color: #9c2a00;
   fill: #FFF;
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 #scrollup.scroll-on {
   bottom: 20px;
@@ -1474,7 +1445,7 @@ nav.pagination .nav-links .page-numbers {
 }
 .search-form input[type=text],
 .search-form input[type=search] {
-  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 0;
 }
 .search-form .search-field {
@@ -1483,14 +1454,13 @@ nav.pagination .nav-links .page-numbers {
 .search-form .search-submit {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   padding: 0 18px;
   border: 0;
   background: #9c2a00;
   border-radius: 0;
   -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 .search-form .search-submit:hover, .search-form .search-submit:focus {
@@ -1534,7 +1504,7 @@ nav.pagination .nav-links .page-numbers {
   font-size: 0.875rem;
   font-weight: 700;
   height: auto;
-  right: 5px;
+  left: 5px;
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
@@ -1551,13 +1521,17 @@ nav.pagination .nav-links .page-numbers {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
+  /*rtl:ignore*/
   float: left;
+  /*rtl:ignore*/
   margin-right: 1.5em;
   margin-bottom: 1.5em;
 }
 
 .alignright {
+  /*rtl:ignore*/
   float: right;
+  /*rtl:ignore*/
   margin-left: 1.5em;
   margin-bottom: 1.5em;
 }
@@ -1565,7 +1539,9 @@ nav.pagination .nav-links .page-numbers {
 .aligncenter {
   clear: both;
   display: block;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.5em;
 }
+
+/*# sourceMappingURL=frontend-style.css.map*/

@@ -5,13 +5,12 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
 	context: __dirname,
 	entry: {
 		frontend: `${themePath}src/frontend.js`,
-		admin: `${themePath}src/admin.js`,
+		customizer: `${themePath}src/customizer.js`,
 	},
 	output: {
 		path: path.resolve(__dirname, `${themePath}/dist`),
@@ -77,8 +76,5 @@ module.exports = {
 		  injectChanges: true,
 		  proxy: process.env.DEV_SERVER_URL,
 		}),
-	],
-	optimization: {
-	  minimizer: [new TerserPlugin()],
-	}
+	]
 }
