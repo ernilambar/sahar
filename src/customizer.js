@@ -1,1 +1,1 @@
-import './js/customizer.js';
+import './js/preview.js';

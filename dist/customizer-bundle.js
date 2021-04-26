@@ -1,21 +1,12 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/customizer.js":
-/*!******************************!*\
-  !*** ./src/js/customizer.js ***!
-  \******************************/
+/***/ "./src/js/preview.js":
+/*!***************************!*\
+  !*** ./src/js/preview.js ***!
+  \***************************/
 /***/ (function() {
 
-/* global wp, jQuery */
-
-/**
- * File customizer.js.
- *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
- */
 (function ($) {
   // Site title and description.
   wp.customize('blogname', function (value) {
@@ -108,8 +99,8 @@ var __webpack_exports__ = {};
   !*** ./src/customizer.js ***!
   \***************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_customizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/customizer.js */ "./src/js/customizer.js");
-/* harmony import */ var _js_customizer_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_customizer_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _js_preview_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/preview.js */ "./src/js/preview.js");
+/* harmony import */ var _js_preview_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_preview_js__WEBPACK_IMPORTED_MODULE_0__);
 
 }();
 /******/ })()

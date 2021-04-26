@@ -1,32 +1,21 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/custom.js":
-/*!**************************!*\
-  !*** ./src/js/custom.js ***!
-  \**************************/
-/***/ (function() {
+/***/ "./src/js/goto-top.js":
+/*!****************************!*\
+  !*** ./src/js/goto-top.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
- // Debounce helper.
-
-var debouncer = function debouncer(a) {
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 250;
-  var c = arguments.length > 2 ? arguments[2] : undefined;
-  return function () {
-    for (var _len = arguments.length, d = new Array(_len), _key = 0; _key < _len; _key++) {
-      d[_key] = arguments[_key];
-    }
-
-    return clearTimeout(c, c = setTimeout.apply(void 0, [a, b].concat(d)));
-  };
-};
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./src/js/utils.js");
 
 document.addEventListener("DOMContentLoaded", function () {
   var scrollUp = document.getElementById('scrollup');
 
   if (scrollUp) {
-    var scrollHandler = debouncer(function () {
+    var scrollHandler = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.debounce)(function () {
       var scrollPosition = window.pageYOffset | document.body.scrollTop;
 
       if (scrollPosition > 300) {
@@ -191,6 +180,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "throttle": function() { return /* binding */ throttle; },
+/* harmony export */   "debounce": function() { return /* binding */ debounce; }
+/* harmony export */ });
+var throttle = function throttle(func, limit) {
+  var inThrottle;
+  return function () {
+    var args = arguments;
+    var context = this;
+
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(function () {
+        return inThrottle = false;
+      }, limit);
+    }
+  };
+};
+
+var debounce = function debounce(func, delay) {
+  var inDebounce;
+  return function () {
+    var context = this;
+    var args = arguments;
+    clearTimeout(inDebounce);
+    inDebounce = setTimeout(function () {
+      return func.apply(context, args);
+    }, delay);
+  };
+};
+
+
+
+/***/ }),
+
 /***/ "./src/scss/frontend.scss":
 /*!********************************!*\
   !*** ./src/scss/frontend.scss ***!
@@ -298,10 +331,9 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/frontend.scss */ "./src/scss/frontend.scss");
 /* harmony import */ var _img_icons_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/icons.svg */ "./src/img/icons.svg");
-/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/custom.js */ "./src/js/custom.js");
-/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_custom_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/navigation.js */ "./src/js/navigation.js");
-/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_navigation_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/navigation.js */ "./src/js/navigation.js");
+/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_navigation_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _js_goto_top_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/goto-top.js */ "./src/js/goto-top.js");
 
 
 
