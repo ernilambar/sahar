@@ -202,6 +202,17 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./src/img/icons.svg":
+/*!***************************!*\
+  !*** ./src/img/icons.svg ***!
+  \***************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/icons.svg";
+
 /***/ })
 
 /******/ 	});
@@ -271,6 +282,11 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	!function() {
+/******/ 		__webpack_require__.p = "./";
+/******/ 	}();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -281,10 +297,12 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/frontend.scss */ "./src/scss/frontend.scss");
-/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/custom.js */ "./src/js/custom.js");
-/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_custom_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/navigation.js */ "./src/js/navigation.js");
-/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_navigation_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _img_icons_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/icons.svg */ "./src/img/icons.svg");
+/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/custom.js */ "./src/js/custom.js");
+/* harmony import */ var _js_custom_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_custom_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/navigation.js */ "./src/js/navigation.js");
+/* harmony import */ var _js_navigation_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_navigation_js__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 

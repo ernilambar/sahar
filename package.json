@@ -10,7 +10,7 @@
     "pot": "yarn run textdomain && yarn run language",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain",
-    "deploy": "del deploy && mkdir deploy && copyfiles '**/*.*' deploy/wowpack -e 'node_modules/**/*.*' -e 'webpack.config.js' -e 'package.json' -e 'package-lock.json'"
+    "deploy": "del deploy && mkdir deploy && copyfiles '**/*.*' deploy/sahar -e 'node_modules/**/*.*' -e 'webpack.config.js' -e 'package.json' -e 'yarn.lock'"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
